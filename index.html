@@ -22,8 +22,7 @@
             if (!initialized && viewer.scene.globe.tilesLoaded === true) {
                 viewer.clock.shouldAnimate = true;
                 initialized = true;
-                viewer.scene.camera.zoomOut(7000000);
-                document.querySelector("#loading").classList.toggle('disappear', true)
+                viewer.scene.camera.zoomOut(7000000);               
             }
         });
         const getSat=async()=> {
