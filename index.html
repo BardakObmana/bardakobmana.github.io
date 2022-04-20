@@ -7,6 +7,9 @@
     <link href="style.css" rel="stylesheet">
 </head>
 <body>
+    <div id="loading">
+        <h1>Loading...</h1>
+    </div>
     <div id="cesiumContainer"></div>
     <script>
         // Initialize the Cesium viewer.
@@ -22,7 +25,8 @@
             if (!initialized && viewer.scene.globe.tilesLoaded === true) {
                 viewer.clock.shouldAnimate = true;
                 initialized = true;
-                viewer.scene.camera.zoomOut(7000000);               
+                viewer.scene.camera.zoomOut(7000000);
+                document.querySelector("#loading").classList.toggle('disappear', true)
             }
         });
         const getSat=async()=> {
